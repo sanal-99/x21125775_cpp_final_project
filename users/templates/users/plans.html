@@ -1,0 +1,56 @@
+
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="row">
+    <!--Discription -->
+
+    <div class="col">
+        <h2 class="font-weight-bold">Routine for Gaining Weight</h2>
+        <p class="text-break" style="color:white">Excecices:
+          <ul style="color:white">
+            <li>40 x Push Ups</li>
+            
+            <li>30 x Squats</li>
+            
+            <li>20 x Pull Ups</li>
+            </ul>
+        </p>
+        <p class="text-break" style="color:white">Diet:
+            <ul style="color:white">
+              <li>Lean proteins, such as chicken and fish(150g)</li>
+              
+              <li>Red meat with no growth hormones, such as grass-fed beef(150g)</li>
+              
+              <li>12 Eggs</li>
+              </ul>
+        </p>
+        <a href = "https://www.youtube.com/watch?v=vPf6iYIJX8I" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="body-link-row"> Open Tutorial</a>
+    </div>
+    <div class="col">
+        <h2 class="font-weight-bold">Routine for Losing  Weight</h2>
+        <p class="text-break" style="color:white">Excecices:
+          <ul style="color:white">
+            <li>35 x Push Ups</li>
+            
+            <li>25 x Squats</li>
+            
+            <li>10 x Pull Ups</li>
+            </ul>
+        </p>
+        <p class="text-break" style="color:white">Diet:
+            <ul style="color:white">
+              <li>Lean proteins, such as chicken and fish(75g)</li>
+              
+              <li>Red meat with no growth hormones, such as grass-fed beef(75g)</li>
+              
+              <li>6 Eggs</li>
+              </ul>
+        </p>
+        <a href = "https://www.youtube.com/watch?v=7fICF_O5esc" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="body-link-row"> Open Tutorial</a><br>
+        
+    </div>
+</div>
+{% endblock %}

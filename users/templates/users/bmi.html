@@ -1,0 +1,68 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+<h2>Body Mass Index</h2>
+<p id="header-paragraph" style="color:white">Body Mass Index (BMI) is a person’s weight in kilograms (or pounds) divided by the square of height in meters (or feet). A high BMI can indicate high body fatness. BMI screens for weight categories that may lead to health problems, but it does not diagnose the body fatness or health of an individual.</p>
+<div class="row">
+    <div class = "col">
+        <br>
+    </div>
+    <div class="col">
+    <script>
+        function displayPlayer() {
+        
+        hi = parseFloat(document.getElementById("heights").value)
+        wi = parseFloat(document.getElementById("weights").value)
+        x = wi/((hi/100)*(hi/100))
+        if (x < 18.5){
+            document.getElementById("bmival").style.visibility = "visible"
+            document.getElementById("bmival").style.backgroundColor = "blue"
+            document.getElementById("bmival").value = "Your Body Mass Index is " + x
+        }
+        else if (x >18.5 && x <= 24.9){
+            document.getElementById("bmival").style.visibility = "visible"
+            document.getElementById("bmival").style.backgroundColor = "green"
+            document.getElementById("bmival").value = "Your Body Mass Index is " + x
+        }
+        else if (x >=25 && x <= 29.9){
+            document.getElementById("bmival").style.visibility = "visible"
+            document.getElementById("bmival").style.backgroundColor = "yellow"
+            document.getElementById("bmival").style.color = "black"
+            document.getElementById("bmival").value = "Your Body Mass Index is " + x
+        }
+        else if (x >=30 && x <= 34.9){
+            document.getElementById("bmival").style.visibility = "visible"
+            document.getElementById("bmival").style.backgroundColor = "orange"
+            document.getElementById("bmival").value = "Your Body Mass Index is " + x
+        }
+        else{
+            document.getElementById("bmival").style.visibility = "visible"
+            document.getElementById("bmival").style.backgroundColor = "red"
+            document.getElementById("bmival").value = "Your Body Mass Index is " + x
+        }
+        
+
+    }
+    </script>
+    <form  id = 'player_stuff'>
+        {% csrf_token %}
+            <label>Weight&nbsp(in kg)</label>
+            <input type="text" name="w" id = "weights"/><br>
+            <br>
+            <label>Height&nbsp(in cm)</label>
+            <input type="text" name="h" id = "heights"/><br>
+    </table>
+    <br>
+    <!-- <a class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="body-link-row"> Calculate</a><br><br> -->
+    <input type="button" value=" Calculate" id='smit' onclick="displayPlayer()"><br>
+    <input type="text" id = "bmival" style="background-color: #3CBC8D; color: white; width: 100%;visibility:hidden;" set/>
+    <!--<input type="text" value="{{result}}"><br>-->
+    </form>
+    </div>
+    <div class="col">
+    <img src="{% static 'users/images/bmicahrt1.png' %}" alt="" >
+    </div>
+
+{% endblock content %}
